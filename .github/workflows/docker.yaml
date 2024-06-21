@@ -138,9 +138,7 @@ jobs:
             
             # 将@sha256:等字符删除
             image_name_tag="${image_name_tag%%@*}"
-            ALIYUN_REGISTRY = "registry.cn-beijing.aliyuncs.com"
-            ALIYUN_NAME_SPACE = "james"
-            new_image="$ALIYUN_REGISTRY/$ALIYUN_NAME_SPACE/$platform_prefix$name_space_prefix$image_name_tag"
+            new_image="registry.cn-beijing.aliyuncs.com/james/$platform_prefix$name_space_prefix$image_name_tag"
             echo "-------------------"
             echo $ALIYUN_REGISTRY
             echo $ALIYUN_NAME_SPACE
