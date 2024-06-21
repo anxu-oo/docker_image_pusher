@@ -58,8 +58,15 @@ jobs:
     - name: Build and push image Aliyun
       run: |
         docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD $ALIYUN_REGISTRY
+        echo "开始拉取镜像"
+        echo "=============================================================================="
         docker pull nolanhzy/pro:latest
+        echo "开始tag"
+        echo "=============================================================================="
         docker tag nolanhzy/pro:latest  registry.cn-beijing.aliyuncs.com/an_storage/pro:latest
+        echo "开始推送"
+        echo "=============================================================================="
+        docker push registry.cn-beijing.aliyuncs.com/an_storage/pro:latest
         echo "开始清理磁盘空间"
         echo "=============================================================================="
         df -hT
