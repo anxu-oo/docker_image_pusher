@@ -60,19 +60,19 @@ jobs:
         docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD $ALIYUN_REGISTRY
         echo "开始拉取镜像"
         echo "=============================================================================="
-        docker pull whyour/qinglong:2.16.3
+        docker pull node:latest
         echo "开始tag"
         echo "=============================================================================="
-        docker tag whyour/qinglong:2.16.3  registry.cn-beijing.aliyuncs.com/an_storage/qinglong:2.16.3
+        docker tag node:latest registry.cn-beijing.aliyuncs.com/an_storage/node:latest
         echo "开始推送"
         echo "=============================================================================="
-        docker push registry.cn-beijing.aliyuncs.com/an_storage/qinglong:2.16.3
+        docker push registry.cn-beijing.aliyuncs.com/an_storage/node:latest
         echo "开始清理磁盘空间"
         echo "=============================================================================="
         df -hT
         echo "=============================================================================="
-        docker rmi whyour/qinglong:2.16.3
-        docker rmi registry.cn-beijing.aliyuncs.com/an_storage/qinglong:2.16.3
+        docker rmi node:latest
+        docker rmi registry.cn-beijing.aliyuncs.com/an_storage/node:latest
         echo "磁盘空间清理完毕"
         echo "=============================================================================="
         df -hT
