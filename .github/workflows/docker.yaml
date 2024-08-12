@@ -63,10 +63,10 @@ jobs:
         docker pull xzxxn777/ddddocr:latest
         echo "开始tag"
         echo "=============================================================================="
-        docker tag node:latest registry.cn-beijing.aliyuncs.com/an_storage/xzxxn777/ddddocr:latest
+        docker tag node:latest registry.cn-beijing.aliyuncs.com/an_storage/ddddocr:latest
         echo "开始推送"
         echo "=============================================================================="
-        docker push registry.cn-beijing.aliyuncs.com/an_storage/xzxxn777/ddddocr:latest
+        docker push registry.cn-beijing.aliyuncs.com/an_storage/ddddocr:latest
         echo "开始清理磁盘空间"
         echo "=============================================================================="
         df -hT
